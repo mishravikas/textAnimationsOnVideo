@@ -3,11 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Video(models.Model):
-    filename = models.CharField(max_length=200)
-    location = models.CharField(max_length=200)
+    video = models.FileField(upload_to='videos')
 
     def __str__(self):
-        return self.filename
+        return self.video.name
 
 class Animation(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE)

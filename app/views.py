@@ -8,24 +8,21 @@ from .models import Video,Animation
 
 
 def index(request):
-    context = {
-            'first_text': 'TITLE 1',
-            }
-
-    return render(request, 'app/index.html',context)
+    videos = Video.objects.all()
+    return render(request, 'app/index.html',{'videos':videos})
 
 def video(request, video_id):
     try:
         video = Video.objects.get(pk=video_id)
     except Video.DoesNotExist:
         raise Http404("Video does not exist")
-    print (video.filename)
+    print (video.video.name)
     anims = Animation.objects.filter(video=video)
     animations = []
     for anim in anims:
         animations.append({'time_app': anim.time_app, 'text': anim.text})
 
-    return render(request,'app/video.html',{'video_name':video.filename, 'animations':animations})
+    return render(request,'app/video.html',{'video':video.video, 'animations':animations})
 
 def animations(request, video_id):
     video = Video.objects.get(pk=video_id)
@@ -36,7 +33,7 @@ def animations(request, video_id):
 def get_animations(video_id):
     video = Video.objects.get(pk=video_id)
     anims = Animation.objects.filter(video=video)
-    data_out = {'video':video.filename}
+    data_out = {'video':video.video.name}
     for j,anim in enumerate(anims):
         data_out[j+1] = {}
         for key,value in model_to_dict(anim).items():

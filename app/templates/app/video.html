@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="{% static 'app/css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/app.css' %}">
     <script>
-var video_url="{% static 'app/video/'%}";
-video_url = video_url + "{{video_name}}.mp4"
+        var video_url = "{{ video.url }}";
     </script>
 </head>
 
