@@ -1,0 +1,162 @@
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+
+
+/* Document
+       ========================================================================== */
+
+
+/**
+     * 1. Change the default font family in all browsers (opinionated).
+     * 2. Correct the line height in all browsers.
+     * 3. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+     */
+
+html {
+    font-family: sans-serif;
+    /* 1 */
+    line-height: 1.15;
+    /* 2 */
+    -ms-text-size-adjust: 100%;
+    /* 3 */
+    -webkit-text-size-adjust: 100%;
+    /* 3 */
+}
+
+
+/* Sections
+       ========================================================================== */
+
+
+/**
+     * Remove the margin in all browsers (opinionated).
+     */
+
+body {
+    margin: 0;
+}
+
+
+/**
+     * Add the correct display in IE 9-.
+     */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+
+/**
+     * Correct the font size and margin on `h1` elements within `section` and
+     * `article` contexts in Chrome, Firefox, and Safari.
+     */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+
+
+.b-video-player-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.b-text-animation {
+    position: absolute;
+    width: 100%;
+    /* max-height: 90%; */
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: white;
+}
+
+
+@-webkit-keyframes show {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.show {
+    -webkit-animation-name: show;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: show;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    opacity: 1 !important;
+}
+
+@-webkit-keyframes grow {
+    0% {
+        width: 5px;
+        height: 5px;
+    }
+    100% {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: 5px;
+        height: 5px;
+    }
+    100% {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.charlie {
+    position: relative;
+    opacity: 0;
+    animation-duration: 3s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.charlie.animated {
+    opacity: 1;
+}

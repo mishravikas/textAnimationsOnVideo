@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    {% load static %}
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+          integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'app/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/app.css' %}">
+    <script>
+var video_url="{% static 'app/video/'%}";
+video_url = video_url + "{{video_name}}.mp4"
+    </script>
+</head>
+
+<body style="text-align: center">
+
+
+<h1>Canvas Video</h1>
+
+<div id="videoPlayerWrapper" class="b-video-player-wrapper">
+    <canvas id="videoPlayer"></canvas>
+    <div id="textAnimationBlock" class="b-text-animation">
+        {% for anim in animations %}
+        <h2 class="charlie" data-animations="bounceIn" data-times="{{anim.time_app}}">
+            {{anim.text}}
+        </h2>
+        {% endfor %}
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>
+<script  src="{% static 'app/js/charlie.js' %}"></script>
+<script  src="{% static 'app/js/app.js' %}"></script>
+</body>
+</html>

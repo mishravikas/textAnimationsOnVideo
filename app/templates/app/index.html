@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+          integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body style="text-align: center">
+
+
+<h1>Canvas Video</h1>
+
+<div id="videoPlayerWrapper" class="b-video-player-wrapper">
+    <canvas id="videoPlayer"></canvas>
+    <div id="textAnimationBlock" class="b-text-animation">
+        <h2 class="charlie" data-animations="bounceIn" data-times="5">
+            {{first_title}}
+        </h2>
+        <h2 class="charlie" data-animations="bounceIn" data-times="15">
+            Another Title
+        </h2>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>
+<script src="assets/js/charlie.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
